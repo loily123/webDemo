@@ -15,10 +15,6 @@ public class AdminDaoImpl implements AdminDao {
 	@Override
 	public boolean queryByName(String userName, String password) {
 		// TODO Auto-generated method stub
-		if (userName.equals("") || password.equals("")) {
-			JOptionPane.showMessageDialog(null, "用户名或密码不能为空", "错误提示", JOptionPane.ERROR_MESSAGE);
-			return false;
-		}
 		List<Admin> admins = null;
 		sql = "select id,username,password from admin where username=?";
 		admins = JDBCUtil.executeQuery(sql, new AdminRowMapping(), userName);

@@ -12,7 +12,8 @@
 			var username = $("#username").val();
 			var password = $("#password").val();
 			if (username == "" || password == "") {
-				alert("请将信息填写完整");
+				alert("用户名或密码不能为空");
+				event.returnValue = false;
 				return;
 			}
 			$("#form").submit();
@@ -43,8 +44,8 @@
 			<tr style="height: 50px;"></tr>
 			<tr align="center">
 				<td colspan="3">
-					<button style="background: #99FFFF">
-						<font size="10px" id="login">登录</font>
+					<button style="background: #99FFFF" id="login">
+						<font size="10px">登录</font>
 					</button>
 				</td>
 			</tr>
