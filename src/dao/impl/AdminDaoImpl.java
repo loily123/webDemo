@@ -7,12 +7,10 @@ import javax.swing.JOptionPane;
 import dao.AdminDao;
 import entity.Admin;
 import entity.AdminRowMapping;
-import objectFactory.ObjectFactory;
 import util.JDBCUtil;
 
 public class AdminDaoImpl implements AdminDao {
 	private String sql = "";
-	private JDBCUtil jdbc = (JDBCUtil) ObjectFactory.getoObject("JDBCUtil");
 
 	@Override
 	public boolean queryByName(String userName, String password) {
@@ -23,7 +21,7 @@ public class AdminDaoImpl implements AdminDao {
 		}
 		List<Admin> admins = null;
 		sql = "select id,username,password from admin where username=?";
-		admins = jdbc.executeQuery(sql, new AdminRowMapping(), userName);
+		admins = JDBCUtil.executeQuery(sql, new AdminRowMapping(), userName);
 		if (admins.size() > 0) {
 			if (admins.get(0).getPassword().equals(password)) {
 				return true;
@@ -40,7 +38,7 @@ public class AdminDaoImpl implements AdminDao {
 		// TODO Auto-generated method stub
 		int result = 0;
 		sql = "update admin set password=? where username=?";
-		result = jdbc.executeUpdate(sql, password, username);
+		result = JDBCUtil.executeUpdate(sql, password, username);
 		if (result == 1) {
 			return true;
 		}

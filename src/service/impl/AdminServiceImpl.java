@@ -3,13 +3,20 @@ package service.impl;
 import java.sql.SQLException;
 
 import dao.AdminDao;
-import objectFactory.ObjectFactory;
 import service.AdminService;
 import transaction.Transaction;
 
 public class AdminServiceImpl implements AdminService {
-	private AdminDao adminDao = (AdminDao) ObjectFactory.getoObject("AdminDao");
-	private Transaction transaction = (Transaction) ObjectFactory.getoObject("Transaction");
+	private AdminDao adminDao;
+	private Transaction transaction;
+
+	public void setAdminDao(AdminDao adminDao) {
+		this.adminDao = adminDao;
+	}
+
+	public void setTransaction(Transaction transaction) {
+		this.transaction = transaction;
+	}
 
 	@Override
 	public boolean queryByUserName(String userName, String password) {
