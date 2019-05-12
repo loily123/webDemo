@@ -19,7 +19,7 @@ public class JDBCUtil {
 	static ThreadLocal<Connection> local = new ThreadLocal<Connection>();
 	static {
 		try {
-			properties.load(new FileInputStream("src/conn.properties"));
+			properties.load(JDBCUtil.class.getClassLoader().getResourceAsStream("conn.properties"));
 			dataSource = BasicDataSourceFactory.createDataSource(properties);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

@@ -83,6 +83,7 @@ public class BeanContext {
 	}
 
 	public static Object getBeans(String key) {
+		log.info(map.get(key));
 		return map.get(key);
 	}
 }

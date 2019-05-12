@@ -15,7 +15,7 @@
 				alert("请将信息填写完整");
 				return;
 			}
-		$("#form").submit();	
+			$("#form").submit();
 		});
 	});
 </script>

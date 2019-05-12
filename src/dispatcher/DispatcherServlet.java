@@ -59,8 +59,7 @@ public class DispatcherServlet extends HttpServlet {
 			log.info("根据请求地址拿不到action");
 			return;
 		}
-		String key = actionBean.getActionClass().substring(15, 16).toLowerCase()
-				+ actionBean.getActionClass().substring(16);
+		String key = actionBean.getActionClass().substring(7);
 		log.debug("key为：" + key);
 		Object object = BeanContext.getBeans(key);
 		Class<? extends Object> objectClass = object.getClass();

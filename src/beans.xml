@@ -2,14 +2,14 @@
 <beans>
 	<bean id="Transaction"
 		class="transaction.impl.TransactionImpl"></bean>
-	<bean id="AdminDao" class="webDemo.dao.impl.AdminDaoImpl"></bean>
+	<bean id="AdminDao" class="dao.impl.AdminDaoImpl"></bean>
 	<bean id="AdminService"
-		class="webDemo.service.impl.AdminServiceImpl">
+		class="service.impl.AdminServiceImpl">
 		<property name="adminDao" ref="AdminDao"></property>
 		<property name="transaction" ref="Transaction"></property>
 	</bean>
 	<bean id="AdminLoginAction"
-		class="webDemo.action.AdminLoginAction">
+		class="action.AdminLoginAction">
 		<property name="adminService" ref="AdminService"></property>
 	</bean>
 </beans>

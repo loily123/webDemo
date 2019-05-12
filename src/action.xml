@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 	<action name="/queryByUserName.do"
-		class="webDemo.action.AdminLoginAction" method="adminQuery">
+		class="action.AdminLoginAction" method="adminQuery">
 		<result name="success" type="forward"></result>
 	</action>
 </actions>
