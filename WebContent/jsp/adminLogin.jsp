@@ -21,7 +21,7 @@
 </script>
 </head>
 <body bgcolor="pink">
-	<form action="/queryByUserName.do" method="post" id="form">
+	<form action="/webDemo/queryByUserName.do" method="post" id="form">
 		<table style="height: 100%; width: 100%;">
 			<tr align="center">
 				<td colspan="3" bgcolor="gray"><font size="20" color="white">欢迎进入网页Demo系统</font></td>
