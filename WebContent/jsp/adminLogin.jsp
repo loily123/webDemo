@@ -52,7 +52,8 @@
 			<tr style="height: 40px;"></tr>
 			<tr align="center">
 				<td colspan="3"><font size="6" color="#0066FF">Demo系统为您服务
-						<a href="https://mail.qq.com/cgi-bin/frame_html">2810637851@qq.com</a></font></td>
+						<a href="https://mail.qq.com/cgi-bin/frame_html">2810637851@qq.com</a>
+				</font></td>
 			</tr>
 		</table>
 	</form>

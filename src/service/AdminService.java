@@ -1,6 +1,13 @@
 package service;
 
+import java.sql.SQLException;
+import java.util.List;
+
+import entity.Admin;
+import exception.MyWebException;
+
 public interface AdminService {
-	boolean queryByUserName(String userName, String password);
-	boolean updateAdmin(String username,String password);
+	List<Admin> queryByUserName(String userName) throws SQLException;
+
+	boolean updateAdmin(String username, String password);
 }

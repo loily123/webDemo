@@ -1,8 +1,11 @@
 package service.impl;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import dao.AdminDao;
+import entity.Admin;
+import exception.MyWebException;
 import service.AdminService;
 import transaction.Transaction;
 
@@ -19,18 +22,12 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public boolean queryByUserName(String userName, String password) {
+	public List<Admin> queryByUserName(String userName) throws SQLException {
 		// TODO Auto-generated method stub
-		boolean f = false;
-		try {
-			transaction.startTransaction();
-			f = adminDao.queryByName(userName, password);
-			transaction.commit();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return f;
+		transaction.startTransaction();
+		List<Admin> admins = adminDao.queryByName(userName);
+		transaction.commit();
+		return admins;
 	}
 
 	@Override

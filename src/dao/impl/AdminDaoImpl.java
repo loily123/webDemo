@@ -7,26 +7,22 @@ import javax.swing.JOptionPane;
 import dao.AdminDao;
 import entity.Admin;
 import entity.AdminRowMapping;
+import exception.MyWebException;
 import util.JDBCUtil;
 
 public class AdminDaoImpl implements AdminDao {
 	private String sql = "";
 
 	@Override
-	public boolean queryByName(String userName, String password) {
+	public List<Admin> queryByName(String userName) {
 		// TODO Auto-generated method stub
 		List<Admin> admins = null;
 		sql = "select id,username,password from admin where username=?";
 		admins = JDBCUtil.executeQuery(sql, new AdminRowMapping(), userName);
 		if (admins.size() > 0) {
-			if (admins.get(0).getPassword().equals(password)) {
-				return true;
-			}
-			JOptionPane.showMessageDialog(null, "密码错误", "错误提示", JOptionPane.ERROR_MESSAGE);
-			return false;
+			return admins;
 		}
-		JOptionPane.showMessageDialog(null, "该用户不存在", "错误提示", JOptionPane.ERROR_MESSAGE);
-		return false;
+		return null;
 	}
 
 	@Override

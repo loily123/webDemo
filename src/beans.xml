@@ -10,4 +10,5 @@
 		<property name="adminService" ref="AdminService"></property>
 	</bean>
 	<bean id="AdminMenuAction" class="action.AdminMenuAction"></bean>
+	<bean id="ResetPasswordAction" class="action.ResetPasswordAction"></bean>
 </beans>

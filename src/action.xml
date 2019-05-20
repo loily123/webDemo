@@ -5,7 +5,8 @@
 		<result name="success" type="forward">/intoMenu.do</result>
 		<result name="error" type="forward">/jsp/error.jsp</result>
 	</action>
-	<action name="/intoMenu.do" class="action.AdminMenuAction" method="intoMenu">
-		<result name="success" type="redirect">/webDemo/jsp/adminMenu.jsp</result>
+	<action name="/intoMenu.do" class="action.AdminMenuAction"
+		method="intoMenu">
+		<result name="success" type="forward">/jsp/adminMenu.jsp</result>
 	</action>
 </actions>
