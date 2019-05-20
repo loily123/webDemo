@@ -9,4 +9,7 @@
 		method="intoMenu">
 		<result name="success" type="forward">/jsp/adminMenu.jsp</result>
 	</action>
+	<action name="/resetPassword.do" class="action.ResetPasswordAction" method="resetPwd">
+	
+	</action>
 </actions>

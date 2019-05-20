@@ -5,11 +5,11 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
 import entity.Admin;
-import exception.MyWebException;
 import service.AdminService;
 import util.ErrorCode;
 
@@ -29,6 +29,7 @@ public class AdminLoginAction {
 		List<Admin> admins = adminService.queryByUserName(username);
 		if (admins != null) {
 			if (password.equals(admins.get(0).getPassword())) {
+				request.getSession().setAttribute("admin", admins.get(0));
 				return "success";
 			} else {
 				errorCode = ErrorCode.PASSWORDERROR;
