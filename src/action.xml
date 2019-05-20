@@ -2,6 +2,10 @@
 <actions>
 	<action name="/queryByUserName.do"
 		class="action.AdminLoginAction" method="adminQuery">
-		<result name="success" type="forward"></result>
+		<result name="success" type="forward">/intoMenu.do</result>
+		<result name="error" type="forward">/jsp/error.jsp</result>
+	</action>
+	<action name="/intoMenu.do" class="action.AdminMenuAction" method="intoMenu">
+		<result name="success" type="redirect">/webDemo/jsp/adminMenu.jsp</result>
 	</action>
 </actions>

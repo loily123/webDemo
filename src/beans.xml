@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
-	<bean id="Transaction"
-		class="transaction.impl.TransactionImpl"></bean>
+	<bean id="Transaction" class="transaction.impl.TransactionImpl"></bean>
 	<bean id="AdminDao" class="dao.impl.AdminDaoImpl"></bean>
-	<bean id="AdminService"
-		class="service.impl.AdminServiceImpl">
+	<bean id="AdminService" class="service.impl.AdminServiceImpl">
 		<property name="adminDao" ref="AdminDao"></property>
 		<property name="transaction" ref="Transaction"></property>
 	</bean>
-	<bean id="AdminLoginAction"
-		class="action.AdminLoginAction">
+	<bean id="AdminLoginAction" class="action.AdminLoginAction">
 		<property name="adminService" ref="AdminService"></property>
 	</bean>
+	<bean id="AdminMenuAction" class="action.AdminMenuAction"></bean>
 </beans>

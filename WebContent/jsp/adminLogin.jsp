@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>admin登录页面</title>
 <script type="text/javascript" src="/webDemo/jquery/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
@@ -37,7 +37,7 @@
 			<tr style="height: 80px;"></tr>
 			<tr>
 				<td align="right" width="45%"><font size="10">密&nbsp;&nbsp;&nbsp;&nbsp;码</font></td>
-				<td><input type="text" name="password"
+				<td><input type="password" name="password"
 					style="height: 50px; margin-left: 50px; width: 240px;"
 					id="password"></td>
 			</tr>
@@ -52,7 +52,7 @@
 			<tr style="height: 40px;"></tr>
 			<tr align="center">
 				<td colspan="3"><font size="6" color="#0066FF">Demo系统为您服务
-						2810637851@qq.com</font></td>
+						<a href="https://mail.qq.com/cgi-bin/frame_html">2810637851@qq.com</a></font></td>
 			</tr>
 		</table>
 	</form>

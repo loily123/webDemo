@@ -25,23 +25,28 @@ public class ActionUtil {
 			document = reader.read(BeanContext.class.getClassLoader().getResource("action.xml"));
 			List<Element> actionList = document.getRootElement().elements("action");
 			for (Element action : actionList) {
+				log.debug(action);
 				ActionBean actionBean = new ActionBean();
 				actionBean.setActionName(action.attributeValue("name"));
 				actionBean.setActionClass(action.attributeValue("class"));
 				actionBean.setActionMethod(action.attributeValue("method"));
 				List<Element> resultList = action.elements("result");
+				log.debug(resultList);
 				if (resultList != null || resultList.size() > 0) {
 					Map<String, ResultBean> resultMap = new HashMap<String, ResultBean>();
-					for (Element result : actionList) {
+					for (Element result : resultList) {
 						ResultBean resultBean = new ResultBean();
 						resultBean.setResultName(result.attributeValue("name"));
 						resultBean.setResultType(result.attributeValue("type"));
 						resultBean.setPagePath(result.getTextTrim());
+						log.debug("resultname:" + resultBean.getResultName() + ",resultType:"
+								+ resultBean.getResultType() + ",resultPath:" + resultBean.getPagePath());
 						resultMap.put(resultBean.getResultName(), resultBean);
 					}
 					actionBean.setResultMap(resultMap);
 				}
 				actionMap.put(actionBean.getActionName(), actionBean);
+				log.debug(actionMap);
 			}
 		} catch (DocumentException e) {
 			// TODO Auto-generated catch block
@@ -50,6 +55,7 @@ public class ActionUtil {
 	}
 
 	public static ActionBean getAction(String key) {
+		log.debug("action key:" + key);
 		return actionMap.get(key);
 	}
 }
