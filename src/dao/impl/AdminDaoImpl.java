@@ -31,7 +31,7 @@ public class AdminDaoImpl implements AdminDao {
 		int result = 0;
 		sql = "update admin set password=? where username=?";
 		result = JDBCUtil.executeUpdate(sql, password, username);
-		if (result == 1) {
+		if (result > 0) {
 			return true;
 		}
 		return false;
