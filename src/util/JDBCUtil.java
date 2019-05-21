@@ -126,6 +126,7 @@ public class JDBCUtil {
 			resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				Object o = rowMapper.rowMapping(resultSet);
+				log.debug(o.toString());
 				arrayList.add(o);
 			}
 		} catch (SQLException e) {
