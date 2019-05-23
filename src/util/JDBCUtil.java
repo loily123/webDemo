@@ -113,6 +113,7 @@ public class JDBCUtil {
 		return result;
 	}
 
+	@SuppressWarnings("unchecked")
 	public static <T> List<T> executeQuery(String sql, RowMapper rowMapper, Object... objects) {
 		connection = null;
 		PreparedStatement preparedStatement = null;

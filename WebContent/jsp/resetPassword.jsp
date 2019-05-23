@@ -36,9 +36,9 @@
 </head>
 <body>
 	<form action="/webDemo/resetPassword.do" method="post">
-		原密码： <input type="text" name="oldPassword" id="oldPwd"></br> 新密码： <input
-			type="password" name="newPassword" id="newPwd"></br> 确认密码: <input
-			type="password" name="confirmPassword" id="confirmPwd"></br>
+		原密码： <input type="text" name="oldPassword" id="oldPwd"><br>
+		新密码： <input type="password" name="newPassword" id="newPwd"><br>
+		确认密码: <input type="password" name="confirmPassword" id="confirmPwd"><br>
 		<button id="submit">重置密码</button>
 	</form>
 </body>

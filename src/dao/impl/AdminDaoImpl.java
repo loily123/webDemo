@@ -2,12 +2,10 @@ package dao.impl;
 
 import java.util.List;
 
-import javax.swing.JOptionPane;
 
 import dao.AdminDao;
 import entity.Admin;
 import entity.AdminRowMapping;
-import exception.MyWebException;
 import util.JDBCUtil;
 
 public class AdminDaoImpl implements AdminDao {

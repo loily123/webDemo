@@ -14,6 +14,7 @@ import entity.ActionBean;
 import entity.ResultBean;
 import objectFactory.BeanContext;
 
+@SuppressWarnings({ "unchecked", "null" })
 public class ActionUtil {
 	private static Logger log = Logger.getLogger(ActionUtil.class);
 	private static Map<String, ActionBean> actionMap = new HashMap<String, ActionBean>();

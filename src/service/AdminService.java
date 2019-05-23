@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 import entity.Admin;
-import exception.MyWebException;
 
 public interface AdminService {
 	List<Admin> queryByUserName(String userName) throws SQLException;
